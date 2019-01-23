@@ -12,4 +12,12 @@
 """
 __author__ = 'wsm'
 
+import xadmin
+from .models import EmailVerifyRecord
 
+
+class EmailVerifyRecordAdmin(object):
+    # 自定义 后台管理系统 显示字段
+    list_display = ['code', 'email', 'send_type', 'send_time']
+
+xadmin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
