@@ -14,6 +14,22 @@ __author__ = 'wsm'
 
 import xadmin
 from .models import EmailVerifyRecord, UserProfile, Banner
+from xadmin import views
+
+
+class BaseSetting(object):
+    # 开启主题功能
+    enable_themes = True
+    use_bootswatch = True
+
+
+class GlobalSettings(object):
+    # 修改 标题
+    site_title = '慕学后台管理系统'
+    # 修改 footer
+    site_footer = '慕学在线网'
+    # 将表单 收起
+    menu_style = 'accordion'
 
 
 class EmailVerifyRecordAdmin(object):
@@ -39,3 +55,6 @@ class BannerAdmin(object):
 xadmin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
 xadmin.site.register(UserProfile, UserProfileAdmin)
 xadmin.site.register(Banner, BannerAdmin)
+
+xadmin.site.register(views.BaseAdminView, BaseSetting)
+xadmin.site.register(views.CommAdminView, GlobalSettings)
