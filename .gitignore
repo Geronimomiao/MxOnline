@@ -18,3 +18,5 @@ apps/organization/migrations/__pycache__/
 apps/users/__pycache__/
 apps/users/migrations/__pycache__/
 templates/
+
+MxOnline/__pycache__/
