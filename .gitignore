@@ -7,7 +7,7 @@
 *.iml
 out
 gen
-extra_apps
+
 .DS_Store
 apps/courses/__pycache__/
 apps/courses/migrations/__pycache__/
@@ -17,6 +17,6 @@ apps/organization/__pycache__/
 apps/organization/migrations/__pycache__/
 apps/users/__pycache__/
 apps/users/migrations/__pycache__/
-templates/
+
 
 MxOnline/__pycache__/

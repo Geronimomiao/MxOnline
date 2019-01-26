@@ -4,12 +4,10 @@ from django.db import models
 from django.db import models
 from datetime import datetime
 # Create your models here.
+from django.contrib.auth.models import AbstractUser
 
-
-class UserProfile(models.Model):
+class UserProfile(AbstractUser):
     nick_name = models.CharField(max_length=50, verbose_name=u'昵称', default='')
-    username = models.CharField(max_length=50, verbose_name=u'用户名', default='')
-    password = models.CharField(max_length=50, verbose_name=u'密码', default='')
     birthday = models.DateField(verbose_name=u'生日', null=True)
     gender = models.CharField(choices=(('male', u'男'),('female', u'女')), default='female', max_length=6)
     address = models.CharField(max_length=100, default=u'')
@@ -19,6 +17,7 @@ class UserProfile(models.Model):
     class Meta:
         verbose_name = '用户信息'
         verbose_name_plural = verbose_name
+
 
 class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20, verbose_name=u'验证码')
