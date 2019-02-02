@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'organization',
     'xadmin',
     'crispy_forms',
-    'captcha'
+    'captcha',
+    'pure_pagination'
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -147,4 +149,5 @@ EMAIL_HOST_PASSWORD = 'Geronimo1701'
 EMAIL_USE_TLS = False
 EMAIL_FROM = 'wangsimiao817@163.com'
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
